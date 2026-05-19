@@ -1,0 +1,13 @@
+{
+  "name": "taf-formatter",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Fixed-airport TAF fetcher and formatter",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js"
+  },
+  "engines": {
+    "node": ">=20"
+  }
+}

@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>TAF Formatter</title>
+    <link rel="stylesheet" href="/styles.css" />
+  </head>
+  <body>
+    <main class="shell">
+      <section class="hero">
+        <p class="eyebrow">AVIATION WEATHER</p>
+        <h1>Fixed-Airport TAF Fetcher</h1>
+        <p class="lede">
+          This page fetches the latest TAFs for WBKK, WBKL, WBSB, WBGR, WBGB, and VYYY, then formats them in your required layout.
+        </p>
+      </section>
+
+      <section class="panel controls">
+        <h2>Fixed Airports</h2>
+        <p class="hint fixed-list">
+          KOTA KINABALU (`WBKK`) / LABUAN (`WBKL`) / BRUNEI (`WBSB`) / MIRI (`WBGR`) / BINTULU (`WBGB`) / YANGON (`VYYY`)
+        </p>
+        <div class="actions">
+          <button id="refresh-button" type="button">Refresh All TAFs</button>
+        </div>
+      </section>
+
+      <section class="panel output">
+        <div class="output-header">
+          <h2>Formatted Output</h2>
+          <div class="actions">
+            <button id="copy-button" type="button">Copy Output</button>
+          </div>
+        </div>
+        <pre id="result">No data fetched yet</pre>
+        <p id="status" class="status"></p>
+      </section>
+    </main>
+
+    <script src="/app.js"></script>
+  </body>
+</html>
