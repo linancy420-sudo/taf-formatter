@@ -1,4 +1,4 @@
-const resultEl = document.querySelector("#result");
+﻿const resultEl = document.querySelector("#result");
 const statusEl = document.querySelector("#status");
 const copyButton = document.querySelector("#copy-button");
 const refreshButton = document.querySelector("#refresh-button");
@@ -18,7 +18,10 @@ function setStatus(message, isError = false) {
 }
 
 function normalizeTaf(raw) {
-  return (raw || "").replace(/\s+/g, " ").trim();
+  return (raw || "")
+    .replace(/^TAF\s+/, "")
+    .replace(/\s+/g, " ")
+    .trim();
 }
 
 function buildSection(title, raw) {
@@ -29,7 +32,7 @@ function buildOutput(results) {
   const borneoBlock = results
     .slice(0, 5)
     .map((item) => buildSection(item.title, item.raw))
-    .join("\n\n");
+    .join("\n");
 
   const yangonBlock = buildSection(results[5].title, results[5].raw);
 
@@ -78,3 +81,5 @@ copyButton.addEventListener("click", async () => {
 });
 
 fetchAllTaf();
+
+
