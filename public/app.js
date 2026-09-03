@@ -9,7 +9,6 @@ const AIRPORTS = [
   { title: "BRUNEI", icao: "WBSB" },
   { title: "MIRI", icao: "WBGR" },
   { title: "BINTULU", icao: "WBGB" },
-  { title: "YANGON", icao: "VYYY" },
 ];
 
 function setStatus(message, isError = false) {
@@ -30,13 +29,10 @@ function buildSection(title, raw) {
 
 function buildOutput(results) {
   const borneoBlock = results
-    .slice(0, 5)
     .map((item) => buildSection(item.title, item.raw))
     .join("\n");
 
-  const yangonBlock = buildSection(results[5].title, results[5].raw);
-
-  return `TAF\n${borneoBlock}\n\nTAF\n${yangonBlock}`;
+  return `TAF\n${borneoBlock}`;
 }
 
 async function fetchAirport(airport) {
